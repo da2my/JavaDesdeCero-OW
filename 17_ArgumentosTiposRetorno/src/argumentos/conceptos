@@ -1,0 +1,102 @@
+1. TIPOS DE RETORNO 
+
+FINAL DE UN MÉTODO
+▸ Completar sus sentencias
+▸ return …;
+▸ Error (excepción)
+Los métodos que no devuelven nada deben
+devolver void.
+
+TIPO DE RETORNO PRIMITIVO
+▸ int, char, boolean, …
+▸ También podemos devolver un array
+(multidimensional)
+public class Rectangulo {
+ //atributos y otros métodos
+ public float getArea() {
+ return base*altura;
+ }
+} 
+
+TIPO DE RETORNO CLASE
+▸ Cualquier clase definida por Java o por
+nosotros.
+▸ También podemos devolver un array
+(multidimensional)
+public class Rectangulo {
+ //atributos y otros métodos
+ public Punto[] getPuntos() {
+
+ }
+} 
+
+2. PASO DE ARGUMENTOS 
+ARGUMENTOS DE UN MÉTODO
+▸ Puede no recibir argumentos
+▸ El máximo es 255
+▸ Tipos primitivos, arrays o clases
+public Rectangulo rectanguloDePuntos(Punto[] esquinas) {
+ //...cuerpo del método...
+} 
+
+NÚMERO ARBITRARIO DE
+ARGUMENTOS DE UN MÉTODO
+▸ Métodos que no sabemos a priori cuantos
+argumentos de un mismo tipo van a
+recibir.
+▸ Se les conoce como varargs.
+▸ Notación de …
+▸ Internamente, funciona como un array
+public Poligono poligonoDePuntos(Punto... esquinas) {
+ int numeroLados = esquinas.length;
+ //...cuerpo del método..
+}
+--------------------------
+
+Las clases Punto y Rectangulo no son lo mismo. Sí que están asociadas; la asociación existente entre ellas es de composición, ya que un Rectangulo se compone de 4 Punto. 
+Por tanto, podemos decir que:
+
+	Un Punto en el plano viene definido por sus coordenadas, x e y.
+	Un Rectangulo se puede definir por 4 instancias de Punto; cada una de ellas correspondería a sus vértices o esquinas (superior izquierda, superior derecha, inferior izquierda, 
+	inferior derecha).
+
+Una de las ventajas de la composición de clases es que para crear un rectángulo, tenemos que proporcionar 4 puntos; es decir, el constructor de Rectangulo recibirá cuatro argumentos
+de tipo Punto, abstrayéndonos de que cada uno de esos puntos está representado por una pareja de coordenadas. Esto no quita que para construir cada punto necesitaremos dicha pareja. 
+Usar un constructor como el que indicas nos permite poder construir un punto de varias formas:
+
+	Punto punto1 = new Punto(0,10);
+	Punto punto2 = new Punto(10,10);
+	Punto punto3 = new Punto(0,0);
+	Punto punto4 = new Punto(10,0);
+	Rectangulo r = new Rectangulo(punto1, punto2, punto3, punto4)
+	
+O incluso, mejor aun, así:
+
+	Rectangulo r = new Rectangulo(new Punto(0,10), new Punto(10,10), new Punto(0,0), new Punto(10,0));
+
+Por otro lado, la finalidad de los métodos getters y setters es aislarnos de la propiedades concretas que conforman nuestro objeto. Podríamos decir que se considera mala práctica
+definir los atributos de una clase como públicos y que cualquiera pueda acceder a ellos. Las ventajas del uso de getters y setters son múltiples:
+
+	- Permiten evitar errores (por ejemplo, si el valor que contiene un atributo de una clase no es el esperado)
+	- Nos permiten realizar comprobaciones al asignar un valor o al tratar de obtenerlo.
+	- Nos permiten realizar algunas transformaciones de los valores al asignarlos (imagina que queremos asignar una cadena de caracteres, y en la asignación a través del
+	  correspondiente setter, la transformamos a mayúscula, que es como nos conviene almacenarla).
+	- También nos permiten realizar algunas transformaciones de los valores al devolverlos (supón que te interesa guardar la información de geolocalización de un elemento con un 
+	  array de dos valores, pero al devolverlo, te interesa retornar un String que represente latitud,longitud).
+
+En definitiva, los getters y setters nos dan control total sobre las propiedades; lo que ofrecemos a quién vaya a utilizar esa clase es una interfaz conveniente para poder trabajar
+con ella.
+
+Por otro lado, el ejemplo versa sobre los argumentos que puede recibir un método, y los tipos de retorno que pueden tener. No se incluye un main para Rectangulo y Punto porque se
+han utilizado para ejemplificar como un método puede devolver/recibir un array de elementos de un tipo. Si quieres, podrías crear una nueva clase con un método main para probar
+a crear varios rectángulos con sus correspondientes puntos. Para ello, no te recomiendo incluir el dicho main en la clase Rectangulo, sino crear una nueva clase, que podrías llamar
+por ejemplo AppRectangulo.
+
+public class AppRectangulo {
+
+    public static void main(String[] args) {
+
+        Rectangulo r = new Rectangulo(new Punto(0,10), new Punto(10,10), new Punto(0,0), new Punto(10,0));
+        System.out.println("Rectangulo : " + r);
+    }
+}

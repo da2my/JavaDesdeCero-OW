@@ -1,0 +1,90 @@
+MANEJO DE
+FECHAS
+
+DATE TIME API
+▸ Incorporado en Java SE 8
+▸ Basado en joda-time
+▸ Nos permite trabajar con fechas y horas
+bajo el estándar JSR 310.
+▸ ISO-8601 como calendario
+predeterminado.
+
+MANEJO DE FECHAS
+Complejidad
+▸ Años bisiestos
+▸ Zonas horarias
+▸ Horario de verano
+▸ ...
+Clases principales
+▸ LocalDate
+▸ LocalDateTime
+▸ ZonedDateTime
+▸ Duration
+▸ Period
+▸ …
+
+PRINCIPIOS DE DISEÑO
+Claro
+El comportamiento de
+los métodos tiene que
+ser claro y esperado
+
+Fluido
+Fácil de leer, que
+permita encadenar
+varias llamadas a
+métodos. El código
+resultante tiene que
+poder leerse fácilmente.
+
+Inmutable
+Muchos de los objetos
+del api son inmutables,
+es decir, no modificables
+después de ser creados.
+Para modificar los
+valores debemos crear
+uno nuevo.
+
+Extensible
+Hasta donde los
+programadores sean
+capaces. Por ejemplo,
+permitiendo crear
+nuestro propio sistema
+de calendario.
+
+LocalDate today = LocalDate.now();
+LocalDate payday = today.with(TemporalAdjusters
+ .lastDayOfMonth()).minusDays(2);
+ 
+LocalDate dateOfBirth = LocalDate.of(2012, Month.MAY, 14);
+LocalDate firstBirthday = dateOfBirth.plusYears(1);
+
+CONVENCIÓN EN EL NOMBRE DE
+LOS MÉTODOS
+_________________
+Nombre | Tipo | Uso
+_______
+of | static | Crear una instancia del objeto a partir de los datos de entrada
+_______
+from | static | Convertir el parámetro de entrada en una instancia de la clase
+_______
+parse | static | Procesar la cadena de entrada y construir una instancia
+_______
+format | instancia | Procesar los datos para producir una cadena
+_______
+get | instancia | Devolver una parte del objeto
+_______
+is | instancia | Consultar el estado del objeto
+_______
+with | instancia | Devolver una copia con uno o varios elementos modificados
+_______
+plus | instancia | Devolver una copia del objeto con una cantidad de tiempo añadido
+_______
+minus | instancia | Devolver una copia del objeto con una cantidad de tiempo sustraído
+_______
+to | instancia | Convertir el objeto en otro tipo
+_______
+at | instancia | Combinar el objeto con otro objeto 
+__________________

@@ -1,0 +1,97 @@
+USO DE LA
+COLECCIÓN
+ARRAYLIST
+
+DIFICULTADES CON LOS ARRAYS
+▸ Conocer a priori el tamaño del array, se lo tenemos que dar en el momento de instanciarlo
+▸ El tamaño no se puede modificar una vez
+creado.
+▸ Problemas para insertar objetos en
+posiciones intermedias
+▸ Aunque sean de objeto, No son realmente objetos
+▸ …
+
+COLECCIONES
+Java provee todo un API de colecciones con
+decenas de interfaces y clases.
+
+Beneficios
+▸ Menos esfuerzo de programación.
+▸ Aumento de la calidad y velocidad.
+▸ Interoperabilidad
+▸ Curva de aprendizaje pequeña
+▸ Reusabilidad. 
+
+ARRAYLIST
+▸ De todas las colecciones de Java es quizá
+la más usada.
+▸ Estructura de datos secuencia. Nos permite manejar una serie de elementos que se van almacenando de  manera lineal
+
+Operaciones
+▸ Acceso posicional. Podremos acceder a un indice concretoo de un arraylist
+▸ Búsqueda
+▸ Iteración. Ir recorriendo un array de una determinada manera para que nos devuelva los errores
+▸ Tomar un fragmento 
+...
+
+CONSTRUCCIÓN DE UN ARRAYLIST
+
+ArrayList()
+▸ Construye un arraylist con capacidad para 10 elementos. 
+su capacidad inicial
+
+ArrayList(Collection c)
+▸ Construye un arraylist a partir de otra colección. 
+
+ArrayList(int initialCapacity)
+▸ Construye un arraylist indicando la capacidad inicial. 
+
+
+CONSTRUCCIÓN DE UN ARRAYLIST
+
+Hasta Java 1.4
+▸ Todas las listas eran de Object. Esto ofrecia una ventaja frente a otros lenguajes de programacion
+Podiamos crear ArrayList de cualquier objeto que nosotros crearamos, esto viene provocado porque
+cualquier objeto de Java de una u otra manera hereda de una clase base primitiva que es la clase Object
+entonces cualquier ArrayList era un ArrayList de Object y como cualquier clase podia heredar de Object pues podiamos
+almacenar cualquier tipo de objeto en un ArrayList. Sin embargo esto provocaba el que pudieramos tener ArrayList que albergaran
+instancias de diferentes tipos en una misma coleccion y esto en ocasiones podia ser positivo pero la gran mayoria de las veces
+no lo era porque si  posteriormente nosotros queriamos tomar los objetos de ahi adentro y llamar a un metodo especifico
+podriamos tener errores de casteo 
+
+
+List cars = new ArrayList();
+cars.add(new Object());
+cars.add("car");
+cars.add(new Integer(1)); 
+
+
+CONSTRUCCIÓN DE UN ARRAYLIST
+
+A partir de Java 1.5
+▸ Inclusión de los genéricos. La anterio parrafada ilustra un error que se soluciona con el uso de genericos
+▸ Permiten parametrizar el tipo indicando que una determinada coleccion va a ser de un tipo especifico y ese tipo
+lo indicamos entre los angulos, de manera que podiamos crear ArrayList de String o de otra clase propia nuestra llamada "Persona"
+
+List<String> cars = new ArrayList<String>();
+
+
+A partir de Java 1.7
+▸ Operador diamond
+▸ Nos ahorra indicar dos veces el tipo
+
+List<String> cars = new ArrayList<>();
+
+ 
+ALGUNOS MÉTODOS DE ARRAYLIST
+
+Nombre: Uso
+add: Añade un elemento al final la lista
+addAll: Añade todos los elementos de la colección pasada como argumento
+clear: Elimina todos los elementos de la lista.
+contains: Comprueba si un elemento está o no en la lista
+get: Devuelve el elemento de la posición especificada de la lista, ese acceso posicional
+isEmpty: Verifica si la lista está vacía
+remove: Elimina un elemento de la lista
+size: Devuelve el número de elementos de la lista
+toArray: A partir de un ArrayList nos devuelve la lista como un array con sus elementos 

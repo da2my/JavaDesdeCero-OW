@@ -1,0 +1,483 @@
+		/*
+		 * OBJETOS
+		 * 
+		 * Un objeto es cualquier cosa sobre la que podemos emitir un concepto.
+		 * 
+		 * Podemos construir una representación de los objetos en nuestros programas.
+		 * 
+		 * Todos los objetos tienen una estructura(ser, como estan conformados) y un
+		 * comportamiento (hacer, dinamico, realiza una serie de operaciones)
+		 * 
+		 * 
+		 */
+
+		/*
+		 * CLASE
+		 * 
+		 * Cada uno de estos elementos son un objeto. Pero todos ellos tienen algo en
+		 * común; nos referimos a ellos como GLOBO.
+		 * 
+		 * - Una clase es un molde con el que podemos construir objetos de un tipo.
+		 * 
+		 * - El molde determina las características y el comportamiento que podrá tener
+		 * ese objeto.
+		 * 
+		 * - A ese molde, como tal, no lo consideramos un objeto.
+		 */
+
+		/*
+		 * PARADIGMA
+		 * 
+		 * Paradigma significa modelo.
+		 * 
+		 * Es la forma en la que se entiende que hay que estructurar un programa.
+		 * 
+		 * Existen múltiples paradigmas.
+		 */
+
+		/*
+		 * POO
+		 * 
+		 * Estructura todas las partes de un programa mediante objetos.
+		 * 
+		 * Los objetos interaccionan entre ellos mediante un paso de mensajes.
+		 */
+
+		/*
+		 * ENCAPSULACIÓN
+		 * 
+		 * Los objetos conocen solamente su estructura, no la de los demás.
+		 */
+
+		/*
+		 * JAVA
+		 * 
+		 * La declaración e implementación de una clase estará en un mismo fichero.
+		 * 
+		 * Los nombres de las clases usan notación UpperCamelCase (Los nombres de las
+		 * clases tienen que ser autodescriptivas, se elimina los espacios en blanco, se
+		 * unen todas palabras y ponemos las primeras letras de todas las palabras,
+		 * incluida la primera, en mayusculas)
+		 */
+
+		/*
+		 * INSTANCIACIÓN DE OBJETOS DE UNA CLASE
+		 * 
+		 * A partir de una clase, como podemos obtener objetos? Se hace mediante una
+		 * operacion que se llama instanciacion
+		 * 
+		 * A la construcción de un objeto a partir del molde que representa una clase,
+		 * se llama instanciacion.
+		 * 
+		 * Persona persona = new Persona(); La sintaxis es parecida a la declaracion de
+		 * una variable de tipo primitivo, pero en este caso es un de tipo escructurado.
+		 * En la que la sentencia esta formada en primer lugar por "Persona" que seria
+		 * el tipo, que en si es la (clase) | "persona" q es l nom dl objeto, una
+		 * (referencia hacia ese objeto) | "=" que es el operador de asignacion | "new"
+		 * que el operador de instanciacion | y por ultimo "Persona();" que es el
+		 * constructor.
+		 * 
+		 */
+
+		/*
+		 * VALOR NULL
+		 * 
+		 * NULL significa ausencia de informacion
+		 * 
+		 * Palabra reservada null, para comparar
+		 * 
+		 * Podemos declarar una referencia a un tipo de objeto, pero no construir
+		 * ninguno.
+		 * 
+		 * Persona persona; En la que "Persona" es el Tipo(clase) | y "persona" es el
+		 * nombre del objeto(referencia) En este caso, esta referencia ahora mismo no
+		 * nos permite acceder a ningun objeto, y almacena un valor NULL
+		 * 
+		 */
+
+		/*
+		 * INTERACCIÓN ENTRE OBJETOS
+		 * 
+		 * El paso de mensaje se realiza llamando a los metodos de un objeto desde otro
+		 * 
+		 * persona.nacer(); persona.hablar(); persona.caminar(); persona.morir();
+		 * 
+		 */
+
+		/*
+		 * MODIFICADORES DE ACCESO
+		 * 
+		 * No nos permite indicar quien puede hacer uso de una clase, o de sus atributos
+		 * y metodos
+		 * 
+		 * public: cualquiera
+		 * 
+		 * private: solo la propia clase
+		 * 
+		 * protected: la propia clase y sus derivados
+		 * 
+		 * por defecto: las clases cercanas (que esten)
+		 */
+
+		/*
+		 * PAQUETE
+		 * 
+		 * Es una unidad organizativa, que puede contener una o más clases.
+		 * 
+		 * A nivel práctico, es un directorio (o un árbol de directorios).
+		 * 
+		 * Nos permiten organizar las clases de forma lógica.
+		 * 
+		 * Indicamos que una clase pertenece a un paquete en la cabecera de la misma
+		 * (package).
+		 */
+
+		/*
+		 * LOS CONSTRUCTORES
+		 * 
+		 * Persona persona = Persona(); analizando esta sentencia, de la instanciacion
+		 * de la construccion de un objeto de tipo persona
+		 * 
+		 * 
+		 * En la memoria del ordenador se almacena en 2 sitios diferente. Por un lado
+		 * "persona" es una referencia hacia el objeto en sí, es decir esa referencia no
+		 * es el objeto en sí sino una manera de acceder al objeto. El objeto se crea en
+		 * otra zona de memoria diferente que se conoce como hip que basicamente se
+		 * encuentran objetos almacenados. Y se construyen a traves del operador de
+		 * instanciacion y del constructor.
+		 * 
+		 * - Se ejecutan exclusivamente en el momento de creacion de un onjeto
+		 * 
+		 * - Sirve para inicializar valores
+		 * 
+		 * - Normalmente public
+		 * 
+		 * - Con o sin argumetos
+		 * 
+		 * - Puede haber varios en una misma clase
+		 * 
+		 * - Eclipse nos ayuda a generarlos
+		 * 
+		 * PUNTERO THIS
+		 * 
+		 * Para poder diferenciar muy bien, en el caso sobretodo de los constructores,
+		 * cuando estamos recibiendo un argumento para poder diferenciar muy bien que
+		 * estamos haciendo referencia desde dentro del constructor a una propiedad o
+		 * estamos haciendo referencia a los valores que hemos recibido como argunemto
+		 * tenemos la palabra THIS
+		 * 
+		 * - Palabra reservada
+		 * 
+		 * - Sirve para hacer referencia a un objeto desde dentro sí mismo
+		 * 
+		 * - Ayuda a la encapsulacion: variables miembro, metodos, constructores.
+		 */
+
+		/*
+		 * PROPIEDADES ó ATRIBUTOS (SINTAXIS DE DECLARACION DE PROPIEDAD)
+		 * 
+		 * modificadorDeAtributo tipoAtributo nombreAtributo:
+		 * 
+		 * "modificadorDeAtributo" puede ser private, protected, public, por defecto...
+		 * || "tipoAtributo" puede ser char, int, float, double, String, Otra clase ||
+		 * Notacion camelCase, autodescriptivo
+		 */
+
+		/*
+		 * METODOS (SINTAXIS DE LOS METODOS)
+		 * 
+		 * modificador[es]DeMetodo tipoRetorno nombreMedoto(tipo1 param1, tipo2, param2,
+		 * ...){ }
+		 * 
+		 * "modificador[es]DeMetodo" pueden ser; por un lado public (casi siempre),
+		 * protected, private o por defecto (es decir, que puede acceder las clases del
+		 * mismo paquete). Además, estos valores pueden ir acompañados de static,
+		 * abstract, final, native, synchronized.
+		 * 
+		 * "tipoRetorno" puede ser un tipo primitivo (int, float, char, String), otra
+		 * clase o void (es decir, que no devuelve nada).
+		 * 
+		 * "nombreMetodo" debería estar escrito en notación camelCase y ser
+		 * autodescriptivo.
+		 * 
+		 * Los parámetros recibidos, tipo1 param1, tipo2 param2, ... siguen las mismas
+		 * indicaciones que tipoRetorno y nombreAtributo.
+		 * 
+		 * 
+		 * 
+		 * GETTERS/SETTERS
+		 * 
+		 * Nos permiten implementar la encapsulacion. De forma que si declaramos las
+		 * propiedades de nuestras clases como privadas nos van a permitir que tengamos
+		 * un metodo que nos devuelva el valor actual de una propiedad o que nos permita
+		 * modificar el valor de esa propiedad
+		 * 
+		 * Nos permiten cambiar el valor de una propiedad o consultarlo
+		 * 
+		 * Un getter y setter por propiedad
+		 * 
+		 * 
+		 * toString()
+		 * 
+		 * Sirve para representar todo el objeto como una cadena atraves de los valores
+		 * de sus atributos
+		 * 
+		 * System.out.println(objeto) sin toString() y con él
+		 * 
+		 */
+
+		/*
+		 * CICLOS DE VIDA DE UN OBJETO
+		 * 
+		 * 
+		 * 
+		 */
+
+		/*
+		 * CLASES ENVOLTORIO
+		 * 
+		 * Tiene métodos interesantes para transformar valores primitivos en cadenas de
+		 * caracteres y viceversa.
+		 * 
+		 * Son útiles si vamos a trabajar con colecciones y otros tipos de contenedores
+		 * de objetos.
+		 * 
+		 * Java tiene una clase para cada uno de los tipos de datos primitivos:
+		 * 
+		 * Tipo de dato primitivo | Clase envoltorio |Tipo de dato primitivo | Clase
+		 * envoltorio
+		 * boolean..................Boolean...........int......................Integer
+		 * char.....................Character...........long...................Long
+		 * byte......................Byte......................float...........Float
+		 * short......................Short......................double........Double
+		 * 
+		 * 
+		 */
+//		// Podemos procesar una cadena de caracteres
+//		// Para obtener un valor int
+//		int x = Integer.parseInt("12345");
+//		System.out.println(x);
+//
+//		// Obtener el maximo entre dos enteros
+//		System.out.println(Integer.max(x, 245));
+//
+//		// Podemos obtener la representacion binaria, hexadecimal u octal de un numero
+//		// entero
+//		System.out.println(Integer.toBinaryString(x));
+//
+//		// Podemos obtener instancias de cualquier tipo con los metodos valueOf(...)
+//		long l = Long.valueOf("34512451345238");
+//		Double d = Double.valueOf(3.141592);
+//
+//		System.out.println(l);
+//		System.out.println(d);
+//
+//		// Podemos saber si un caracter es una letra o un numero
+//		char c = 'a';
+//		System.out.println(Character.isAlphabetic(c));
+//		System.out.println(Character.isDigit(c));
+//
+//		// Podemos realizar operaciones l�gicas con valores booleanos
+//		System.out.println(Boolean.logicalXor(true, true));
+//		System.out.println(Boolean.logicalOr(true, false));
+
+		/*
+		 * TIPOS DE RETORNO DE UN METODO
+		 * 
+		 * - Se devuelve por el medio de la sentensia return...;
+		 * 
+		 * - Los que no devuelven nada se llaman void y devuelven un valo vacio
+		 * 
+		 * - Se puede tambien devolver Error (excepción)
+		 * 
+		 * Tipo de retorno PRIMITIVO:
+		 * 
+		 * - pueden ser int, char, boolean...
+		 * 
+		 * - Tambien se devuelven array y multidimensional
+		 * 
+		 * Tipo de retorno CLASE:
+		 * 
+		 * - Tambien podemos tener metodos que devuelvan una instancia de una clase,
+		 * tanto si la hemos definido nosotros o la ha definido java
+		 * 
+		 * - Tambien pondemos devolver un array(multidimensional)
+		 * 
+		 */
+
+		/*
+		 * PASO DE ARGUMENTOS
+		 * 
+		 * Un metodo pude recibir una serie de argumentos de entrada para poder hacer
+		 * algunas operaciones con ellos
+		 * 
+		 * Numero arbitrario de argumentos de un METODO:
+		 * 
+		 * - Metodos que no sabemos q priori cuantos argumentos de un mismo tipo van a
+		 * recibir
+		 * 
+		 * - Se llaman varargs
+		 * 
+		 * - Notacion de ...
+		 * 
+		 * - Internamente funciona como un array
+		 * 
+		 * public Poligono poligonoDePuntos(Punto... esquinas){ int numeroLados =
+		 * esquinas.length; }
+		 * 
+		 * 
+		 * PASO DE ARGUMENTOS POR VALOR
+		 * 
+		 * - Cuando recibimos una serie de argumentos, java realiza una copia de esas
+		 * variables. Al finalizar el metodo, esta copia se destruye. Es decir nosotros
+		 * le porporcionamos uno o varios valores, java no va a modificar dichos valores
+		 * sino los copia y trabaja con ellos se puede modificar esa copia, settear un
+		 * nuevo valor, si son numeros se puede incrementar o decrementar. Y cuando
+		 * termina la ejecucion del metodo esa copia se destruye. Todo funciona mediante
+		 * un sistema de marcos de ejecucion que se van anidando en una estructura de la
+		 * memoria que se llama "la pila"
+		 * 
+		 * PASO DE ARGUMENTOS POR REFERENCIA
+		 * 
+		 * - Cuando no se realiza una copia de las variables. Sino que se modifican
+		 * directamente las variables que hemos pasado, y esos valores quedan
+		 * modificados al finalizar el metodo. -No existe en Java-
+		 * 
+		 * 
+		 * PASO DE TIPOS PRIMITIVOS
+		 * 
+		 * - Se hace por valor
+		 * 
+		 * ver ejemplo en package clases_objetos.pasosPorValorOReferencia;
+		 * 
+		 * PASO DE OBJETOS
+		 * 
+		 * -Se hace por valor
+		 * 
+		 * - No cambia la referencia, pero el interior del objeto sí se puede modificar
+		 * hay que tener en cuenta que es lo que nosotros estamos pasando.
+		 * 
+		 * Cuando nosotros pasamos un objeto a traves de un metodo como argunmento, lo
+		 * que estamos pasando es una variable de referencia. Recordando el concepto de
+		 * referencia, es una variable que se almacenará en la direccion de memoria en
+		 * la que el objeto reside. Con lo cual mediante ese paso por valor lo que no
+		 * vamos a poder modificar dentro del metodo, es esa referencia. Es decir si
+		 * cambiamos a que objeto esta apuntando esa referencia perderemos ese cambio
+		 * cuando el metodo termine su ejecuicion. Sin embargo, si dentro del metodo
+		 * modificamos algo del interior del objeto referenciado esos cambios si van a
+		 * perdurar cuando termine la ejecucion del metodo. Con lo cual aunque el paso
+		 * sea por valor los objetos si pueden ser modificados dentro de los metodos
+		 * 
+		 */
+
+		/*
+		 * MODIFICADORES DE ACCESO
+		 * 
+		 * A NIVEL DE CLASE
+		 * 
+		 * - Nuestras clases deben ser public o sin modificador
+		 * 
+		 * - En caso de ser public, cualquiera podrá utilizarlas (más recomendado)
+		 * 
+		 * - Sin modificador, solamente las clases del mismo paquete podrán usarlas.
+		 * 
+		 * A NIVEL DE MÉTODOS
+		 * 
+		 * - Intentaremos escoger siempre la version mas restrictiva posible
+		 * 
+		 * - Para metodos que realizan operaciones auxiliares a otros metodos, podemos
+		 * escoger private
+		 * 
+		 * - La mayoria de metodos seran public. Son su interlocutor con el exterior
+		 * 
+		 * - Los constructores deben ser public
+		 * 
+		 * A NIVEL DE ATRIBUTO
+		 * 
+		 * - Deben ser private, salvo para constantes
+		 * 
+		 * - Hay que tener una muy buena razon para no usarlo
+		 * 
+		 * - Los atributos publicos aumentan el acoplamiento del codigo, y limitan la
+		 * flexibilidad de refactorizacion
+		 * 
+		 */
+
+		/*
+		 * METODOS STATIC Y VARIABLES STATIC
+		 * 
+		 * Atributos de objeto y de clase
+		 * 
+		 * - Los objetos son instancias de una clase. Son instancias es decir, son
+		 * copias sacadas a partir de un molde llamado clase
+		 * 
+		 * - Cada objeto tiene una copia de los atributos y permite modificar el valor
+		 * de los suyos propios. Esto se puede hacer a traves de la encapsulación.
+		 * 
+		 * - ¿Y si quisiéramos tener un atributo que fuese común a todos los objetos, a
+		 * todas las instancias que hemos creado a partir de una clase de una clase? se
+		 * puede conseguir a traves del modificador static, que indica que un atributo
+		 * no va a ser de un objeto u otro en particular, de una instancia concreta,
+		 * sino que va a ser comun a todas ellas porque va a ser de la clase.
+		 * 
+		 * Atributos Estaticos
+		 * 
+		 * - Están asociados a la clase, no a una instancia de ella.
+		 * 
+		 * - Son llamados atributos estáticos
+		 * 
+		 * - Compartidos para todas las instancias de esa clase.
+		 * 
+		 * - Pueden ser manipulados por cualquier instancia.
+		 * 
+		 * - También pueden ser manipulados sin crear instancias de esa clase.
+		 * 
+		 * Metodos Estaticos
+		 * 
+		 * - Similares a las variables estáticas (static)
+		 * 
+		 * - Se pueden invocar sin crear una instancia de esa clase.
+		 * 
+		 * - Clase.metodoEstatico(…);
+		 * 
+		 * - Para acceder a una variable estática, necesitamos un método estático.
+		 * 
+		 * - Clases con métodos auxiliares (como por ejemplo, java.util.Arrays).
+		 * 
+		 * Constantes
+		 * 
+		 * - Se suelen definir como estáticas.
+		 * 
+		 * - static final …
+		 * 
+		 * static final double PI = 3.141592653589793;
+		 * 
+		 * - No se puede modificar su valor (error)
+		 * 
+		 * - Nombre en mayúsculas, separando palabras con guiones bajos.
+		 * 
+		 */
+
+		/*
+		 * SOBRECARGA DE METODOS
+		 * 
+		 * - Java soporta que una clase tenga dos (o más) métodos con el mismo nombre.
+		 * 
+		 * - Deben tener diferente firma: número de argumentos o tipos diferentes.
+		 * 
+		 * - No se pueden tener dos métodos con mismo nombre y misma firma
+		 * (indistinguibles).
+		 * 
+		 * - Java permite su uso, pero no recomienda su uso masivo (código menos
+		 * legible).
+		 * 
+		 * 
+		 * SOBRECARGA DE CONSTRUCTORES
+		 * 
+		 * - Muy habitual.
+		 * 
+		 * - Nos permiten construir un mismo objeto de diferentes formas.
+		 * 
+		 * - Siguen las mismas normas que la sobrecarga de métodos.
+		 * 
+		 */

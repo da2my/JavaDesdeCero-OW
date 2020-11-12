@@ -1,0 +1,47 @@
+USO DE LA CLASE
+STRING
+
+CREACIÓN DE STRINGs
+▸ Java crea un String con un literal
+encerrado entre dos comillas dobles.
+▸ Estos String son inmutables. Todas las
+operaciones que hagamos con ellos, darán
+como resultado uno nuevo, no la
+modificación del anterior (altamente
+ineficiente).
+String saludo = "Hola Mundo";
+ 
+CONCATENACIÓN DE STRINGs
+▸ Concatenar es yuxtaponer un String a
+continuación de otro.
+▸ Se puede hacer con el operador + y el
+método concat(…).
+"Cadena " + "concatenada"
+"Mi nombre es ".concat("Pepe") 
+
+LONGITUD DE UN STRING
+▸ Se trata del número de caracteres que lo
+conforman.
+▸ Cuentan también los espacios en blanco,
+tabuladores, signos de puntuación, …
+▸ Método length()
+String saludo = "Hola Mundo!";
+System.out.println(saludo.length()); //Debe imprimir 11 
+
+MAYÚSCULAS Y MINÚSCULAS
+▸ Transforman una cadena completa a
+mayúsculas o minúsculas.
+▸ Métodos toLowerCase() y toUpperCase()
+
+CADENAS FORMATEADAS
+▸ Nos permiten insertar valores dentro de
+una cadena a posteriori.
+▸ Evitan concatenaciones tediosas.
+▸ Uso del método format(…)
+String.format("Hola, soy %s %s y quiero saludarte diciéndote %s",
+ nombre, apellidos, mensaje);
+ 
+COMPARACIÓN DE STRINGs
+▸ Java provee de múltiples métodos para
+comparar dos cadenas de caracteres.
+https://docs.oracle.com/javase/8/docs/api/index.html 

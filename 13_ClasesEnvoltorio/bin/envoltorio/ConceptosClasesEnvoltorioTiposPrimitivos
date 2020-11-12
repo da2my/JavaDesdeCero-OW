@@ -1,0 +1,26 @@
+USO DE CLASES
+ENVOLTORIO
+PARA TIPOS
+PRIMITIVOS 
+
+CLASES ENVOLTORIO
+▸ Java tiene una clase para cada uno de los
+tipos de datos primitivos.
+
+Tipo de dato primitivo Clase envoltorio
+boolean Boolean
+int Integer
+char Character
+long Long
+byte Byte
+float Float
+short Short
+double Double 
+
+CLASES ENVOLTORIO
+▸ Tiene métodos interesantes para
+transformar valores primitivos en cadenas
+de caracteres y viceversa.
+▸ Más adelante veremos que son útiles si
+vamos a trabajar con colecciones y otros
+tipos de contenedores de objetos. 

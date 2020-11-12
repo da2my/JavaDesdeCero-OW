@@ -1,0 +1,84 @@
+INTRODUCCIÓN A LAS EXPRESIONES LAMBDA
+
+PROGRAMACIÓN FUNCIONAL. Paradigma de programacion funcional
+▸ Diferente de la programación imperativa
+▸ Lenguaje matemático formal. Llamado el calculo Lambda
+▸ En este paradigma, la salida de una función depende exclusivamente de sus parámetros de entrada.
+▸ Más expresivo (con menos código) y elegante.
+▸ Presente en otros lenguajes de programación desde hace tiempo.
+ 
+FUNCIONES: ENTIDADES DE PRIMER NIVEL
+La programacion funcional se centra en la idea de convertir las funciones en entidades de primer nivel
+▸ Hasta ahora las entidades de primer nivel, es decir lo que podiamos pasar como argumentos de un metodo
+eran variables, literales u objetos y alguna convinacion de ellas.
+▸ Si las funciones pasan a ser entidades de primer nivel, se podria utilizar una funcion alla donde antes
+se utilizaba una variable, con lo cual podriamos guardar una funcion dentro de una variable o pasar una 
+funcion como argumento de un metodo
+▸ Por ejemplo, pasar una función como argumento de un método.
+
+EXPRESIÓN LAMBDA
+▸ Básicamente es un método abstracto, una función sin nombre.
+▸ Su estructura es
+
+() -> expresión // a la izquierda de la flecha tendremos los argumentos, parametros que recibiria esa funcion
+y a la derecha tendriamos el codigo que se ejecutaria como cuerpo de esa funcion
+
+(parámetros) -> expresión // Si solo va a ser una expresion se pone tal cual
+
+(parámetros) -> { sentencias; } // Si va a ser un conjunto de sentencias se pone de esta manera separadas cada sentencia con ;
+
+
+EJEMPLOS DE EXPRESIONES LAMBDA
+() -> new ArrayList<>() //Nos permite crear un nuevo ArrayList
+
+(int a, int b) -> a+b  //Devolveria porque hay implicito una sentencia return a la derecha de la flecha, recibiendo 2 
+parametros de tipo entero
+
+(a) -> { //Tenemos  que se recibe un argumento "a" el tipo se inferiria  a raiz del contexto donde este la expresion Lambda y
+donde hariamos 2 sentencias, en este caso, imprimirlo por consola y devolverlo un valor verdadero
+ System.out.println(a);
+ return true;
+ }
+ 
+INTERFAZ FUNCIONAL
+▸ Se trata de un interfaz con un solo método (que no sea static ni default) (y en los cuales tampoco contemos con los metodos 
+propios de la clase Object, como equals, …). Lo que si podriamos tener,  seria una Interfaz con un solo metodo abstract o una 
+Interfaz con un metodo abstract y 10 metodos static o default
+▸ En lugar de implementar una clase, o una clase anónima, podemos utilizar una expresión lambda.
+
+Ejemplo de Interfaz funcional:
+https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html
+Esta Interfaz va a tener metodos para comparar 2 objetos del mismo tipo, de un tipo T que le pasemos. Ademas tiene muchos metodos
+static para hacer comparaciones rapidas etc etc. Sin embargo solo tiene un metodo, compare(), como metodo abstract. 
+
+Para comprobar que una Interfaz es funcional surge la notacion @FunctionalInterface
+
+Para resumir, nosotros podriamos intentar utilizar una Interfaz Funcional, implementando la clase a traves de una clase anonima o
+mediante una expresion Lambda
+ 
+COLLECIONES y forEach
+▸ Nuevo bucle para recorrer colecciones
+▸ Recibe como parámetro un objeto que instancie una interfaz funcional, en particular Consumer<T> tiene un solo metodo
+que lo que va a ir haciendo es tomando los elementos de la coleccion y haciendo con el, pues lo que indique el cuerpo 
+de ese metodo.
+▸ Perfecto para usar expresiones lambda.
+
+ACCESO A MÉTODOS
+▸ Se puede usar el operador :: 
+▸ Abrevia aun más la expresión
+____________________________________________________
+String::valueOf 	| x-> String.valueOf(x)			|
+Object::toString 	| x -> x.toString()				|
+x::toString 		| () -> x.toString()			|
+ArrayList::new 		| () -> new ArrayList			|
+System.out::println | x -> System.out.println(x) 	|
+____________________|_______________________________|
+
+API STREAM
+▸ Nos permite trabajar con una colección como si se tratara de un flujo de información.
+▸ Permite realizar fácilmente operaciones de filtrado, transformación, ordenación, agrupación y presentación de información.
+
+
+
+
+
